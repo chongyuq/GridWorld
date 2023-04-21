@@ -28,5 +28,6 @@ def plot_agent(agent: Agent, stretch=1, ax=None):
     a = ax.imshow(array, cmap='coolwarm')
     ax.set_xticks([i for i in range(agent.nx)])
     ax.set_yticks([i for i in range(agent.ny)])
+    ax.invert_yaxis()
     fig.colorbar(a)
     return a

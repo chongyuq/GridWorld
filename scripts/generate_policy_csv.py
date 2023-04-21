@@ -1,5 +1,6 @@
 from utils.builtin import *
-from envs.envs import *
+# from envs.envs import *
+from envs.BeatrizMazes import *
 from policyfuncs.SR import SR_policies
 from policyfuncs.QLearn import QLearn_policies
 from plot.agent import plot_agent
@@ -9,10 +10,11 @@ from core.agent import Agent
 def main():
     params = myDict(
         data_path='../../data/policies',
-        world='maze_world_7'
+        world='maze_world_6'
     )
     # define world
-    world = eval(f'{params.world}()')[0]
+    # world = eval(f'{params.world}()')[0]
+    world = Maze63().make_world()
     world_state = [int(i.blocked) for i in world.states]
 
     # find policies
