@@ -7,7 +7,6 @@ from itertools import product
 
 class Maze48:
     def __init__(self):
-        """ note this is the same as maze_world_6 from envs, all walls are single units so they can be removed"""
         self.world = None
         self.wx, self.wy = 15, 15
         self.n_s = self.wx * self.wy
@@ -115,6 +114,7 @@ class Maze62(Maze61):
 
 
 class Maze63(Maze62):
+    """ note this is the same as maze_world_6 from envs, all walls are single units so they can be removed"""
     def __init__(self):
         super().__init__()
         self.block_pos.append([8, 5])

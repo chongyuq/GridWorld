@@ -14,13 +14,13 @@ def main():
     )
     # define world
     # world = eval(f'{params.world}()')[0]
-    world = Maze63().make_world()
+    world = Maze95().make_world()
     world_state = [int(i.blocked) for i in world.states]
 
     # find policies
     agent = Agent(world=world)
-    policies = SR_policies(agent=agent, world_state=world_state, world_idx=params.world)
-    policies = QLearn_policies(agent=agent, world_state=world_state, world_idx=params.world, episodes=10,
+    # policies = SR_policies(agent=agent, world_state=world_state, world_idx=params.world)
+    policies = QLearn_policies(agent=agent, world_state=world_state, world_idx=params.world, episodes=2000,
                                distribution=True)
 
     # plot policies to check

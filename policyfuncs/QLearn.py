@@ -3,7 +3,7 @@ from core.agent import Agent
 from policyfuncs.RL import RLLearning
 
 
-def QLearn_policies(agent:Agent, world_idx, world_state, episodes=1000, exploring_start=True, reset=True,
+def QLearn_policies(agent: Agent, world_idx, world_state, episodes=1000, exploring_start=True, reset=True,
                     distribution=False):
     """
 
@@ -17,7 +17,7 @@ def QLearn_policies(agent:Agent, world_idx, world_state, episodes=1000, explorin
     :return:
     """
     policies = []
-    RL_learner = RLLearning(agent=agent, epsilon=0, threshold=0, alpha=1e-5, gamma=0.995)
+    RL_learner = RLLearning(agent=agent, epsilon=0.1, threshold=0.2, alpha=0.5, gamma=0.999)
     for i, j in enumerate(world_state):
         if j == 0:
             reward_tuple = (i // 15, i % 15)
